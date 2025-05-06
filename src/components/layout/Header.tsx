@@ -1,5 +1,5 @@
-
 import { Link } from "react-router-dom";
+import Icon from "@/components/ui/icon";
 
 const Header = () => {
   return (
@@ -10,6 +10,10 @@ const Header = () => {
           <Link to="/" className="hover:underline">ГЛАВНАЯ</Link>
           <Link to="/catalog" className="hover:underline">КАТАЛОГ</Link>
           <Link to="/about" className="hover:underline">О НАС</Link>
+          <Link to="/profile" className="flex items-center hover:underline">
+            <Icon name="User" className="h-5 w-5 mr-1" />
+            ПРОФИЛЬ
+          </Link>
         </div>
       </div>
     </nav>
