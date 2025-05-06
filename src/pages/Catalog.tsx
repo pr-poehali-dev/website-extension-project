@@ -1,33 +1,56 @@
 
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-const Index = () => {
-  const popularTours = [
+const Catalog = () => {
+  const tours = [
     {
       id: 1,
-      title: "НАЗВАНИЕ ТУРА",
-      location: "ЛОКАЦИЯ",
+      title: "ГОРНЫЙ ТРЕКИНГ",
+      location: "КАВКАЗ",
       extremeRating: 4,
       maxRating: 6,
       imageSrc: "https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?q=80&w=2069&auto=format&fit=crop"
     },
     {
       id: 2,
-      title: "НАЗВАНИЕ ТУРА",
-      location: "ЛОКАЦИЯ",
+      title: "ВУЛКАНИЧЕСКИЙ ТУР",
+      location: "КАМЧАТКА",
       extremeRating: 5,
       maxRating: 6,
       imageSrc: "https://images.unsplash.com/photo-1543933441-b4f6c33fe8f7?q=80&w=2070&auto=format&fit=crop"
     },
     {
       id: 3,
-      title: "НАЗВАНИЕ ТУРА",
-      location: "ЛОКАЦИЯ",
+      title: "ДАЙВИНГ С АКУЛАМИ",
+      location: "ЧЕРНОЕ МОРЕ",
       extremeRating: 3,
       maxRating: 6,
       imageSrc: "https://images.unsplash.com/photo-1564731071754-001b9f5a85b6?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      id: 4,
+      title: "РАФТИНГ ЭКСТРИМ",
+      location: "АЛТАЙ",
+      extremeRating: 5,
+      maxRating: 6,
+      imageSrc: "https://images.unsplash.com/photo-1594784254931-5bccd5b6bacf?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      id: 5,
+      title: "ЛЕДЯНОЙ МАРШРУТ",
+      location: "БАЙКАЛ",
+      extremeRating: 3,
+      maxRating: 6,
+      imageSrc: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2040&auto=format&fit=crop"
+    },
+    {
+      id: 6,
+      title: "ПАРАПЛАНЕРИЗМ",
+      location: "СОЧИ",
+      extremeRating: 4,
+      maxRating: 6,
+      imageSrc: "https://images.unsplash.com/photo-1622222298046-f8cf55854452?q=80&w=2070&auto=format&fit=crop"
     }
   ];
 
@@ -45,40 +68,13 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Главный баннер */}
-      <div 
-        className="bg-cover bg-center py-20" 
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop)`,
-          minHeight: "400px"
-        }}
-      >
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#97ff00] mb-6">
-            ГОТОВЫ К ЭКСТРИМУ?
-          </h1>
-          <p className="text-white text-xl md:text-2xl mb-8">
-            (ТОГДА ВАС ЗАИНТЕРЕСУЕТ)
-          </p>
-          <Button 
-            asChild
-            className="bg-[#97ff00] hover:bg-[#7acc00] text-black text-xl px-10 py-6"
-          >
-            <Link to="/catalog">КАТАЛОГ</Link>
-          </Button>
-        </div>
-      </div>
-
-      {/* Секция популярных туров */}
+      {/* Баннер каталога */}
       <div className="bg-black py-12">
         <div className="container mx-auto">
-          <div className="flex items-center mb-8">
-            <h2 className="text-[#97ff00] text-3xl font-bold">ПОПУЛЯРНОЕ</h2>
-            <div className="ml-4 flex-1 h-0.5 bg-gradient-to-r from-[#97ff00]/50 to-transparent"></div>
-          </div>
+          <h1 className="text-[#97ff00] text-4xl font-bold mb-8">КАТАЛОГ ЭКСТРЕМАЛЬНЫХ ТУРОВ</h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {popularTours.map((tour) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tours.map((tour) => (
               <Card key={tour.id} className="bg-black border border-[#97ff00]/30 overflow-hidden rounded-none hover:shadow-[0_0_15px_rgba(151,255,0,0.3)] transition-shadow duration-300 h-full">
                 <div className="h-60 relative overflow-hidden">
                   <img 
@@ -115,4 +111,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Catalog;
